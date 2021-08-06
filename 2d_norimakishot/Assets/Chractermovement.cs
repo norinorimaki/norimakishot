@@ -8,6 +8,7 @@ public class Chractermovement : MonoBehaviour
     public float JumpForce = 1;
 
     private Rigidbody2D _rigidbody;
+    public GameObject Norimaki_Prefab;
 
     private void Start()
     {
@@ -22,6 +23,10 @@ public class Chractermovement : MonoBehaviour
     if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate( Norimaki_Prefab, transform.position, Quaternion.identity);
         }
     }
 }
