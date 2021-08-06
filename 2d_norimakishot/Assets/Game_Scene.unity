@@ -643,8 +643,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 372471246fc69f941b3632f1debdb47f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 4
-  JumpForce: 10
+  MovementSpeed: 10
+  JumpForce: 14
+<<<<<<< HEAD
+  Norimaki_Prefab: {fileID: 7605972867827210708, guid: 19984708c51f0ef47b996399eeb8c720, type: 3}
+
+=======
+>>>>>>> 088cf74245a07cee4246ca2b297697ff4435e263
 --- !u!1 &1438074112
 GameObject:
   m_ObjectHideFlags: 0
