@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7605972867827210711}
   - component: {fileID: 8890694363871346963}
   - component: {fileID: -7670362984712839369}
+
   m_Layer: 0
   m_Name: Norimaki_Prefab
   m_TagString: Untagged
@@ -115,6 +116,7 @@ CircleCollider2D:
   serializedVersion: 2
   m_Radius: 1.5
 --- !u!50 &-7670362984712839369
+
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -135,3 +137,4 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+
