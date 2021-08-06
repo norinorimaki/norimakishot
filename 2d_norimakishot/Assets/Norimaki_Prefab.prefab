@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 7605972867827210713}
   - component: {fileID: 7605972867827210710}
   - component: {fileID: 7605972867827210711}
-  - component: {fileID: 8890694363871346963}
-  - component: {fileID: -7670362984712839369}
-
+  - component: {fileID: -6361622215321443555}
+  - component: {fileID: -6416436149681171718}
   m_Layer: 0
   m_Name: Norimaki_Prefab
   m_TagString: Untagged
@@ -99,24 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b63018c7562584c9de629204b2e5fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &8890694363871346963
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7605972867827210708}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.5
---- !u!50 &-7670362984712839369
-
+--- !u!50 &-6361622215321443555
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -137,4 +119,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
-
+--- !u!58 &-6416436149681171718
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7605972867827210708}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5

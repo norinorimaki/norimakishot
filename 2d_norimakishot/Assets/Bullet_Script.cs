@@ -21,9 +21,9 @@ public class Bullet_Script : MonoBehaviour
         }
         
     }
-    void OnTriggerEnter2D(Collider2D enemy)
+    void OnTriggerEnter2D(Collider2D coll)
         {
-        Destroy(enemy.gameObject);
+            Destroy(coll.gameObject);
             Destroy(gameObject);
         }
 }
