@@ -9,7 +9,6 @@ public class PlayerController : PhysicsObject
 
     private SpriteRenderer spriteRenderer;
 
-    // Start is called before the first frame update
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -34,7 +33,7 @@ public class PlayerController : PhysicsObject
             }
         }
 
-        bool flipSprite = spriteRenderer.flipX ? (move.x >= 0.00f) : (move.x < 0.00f);
+        bool flipSprite = spriteRenderer.flipX ? (move.x > 0.00f) : (move.x < 0.00f);
         if (flipSprite)
         {
             spriteRenderer.flipX = !spriteRenderer.flipX;   
