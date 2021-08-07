@@ -794,7 +794,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.257436, y: 1}
+    m_SensorSize: {x: 2.7921422, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1090,6 +1090,7 @@ GameObject:
   - component: {fileID: 1964378345}
   - component: {fileID: 1964378344}
   - component: {fileID: 1964378346}
+  - component: {fileID: 1964378347}
   m_Layer: 0
   m_Name: "\u5BFF\u53F8\u5C4B\u5927\u5C06"
   m_TagString: Player
@@ -1307,5 +1308,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityModifier: 2
   minGroundNormalY: 0.65
-  maxSpeed: 7
+  maxSpeed: 10
   jumpTakeOffSpeed: 10
+--- !u!95 &1964378347
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964378340}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bd4d43057a83a424197a4628b184ff82, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
