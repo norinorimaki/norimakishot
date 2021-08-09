@@ -794,7 +794,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.7921422, y: 1}
+    m_SensorSize: {x: 2.9810557, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1310,6 +1310,7 @@ MonoBehaviour:
   minGroundNormalY: 0.65
   maxSpeed: 10
   jumpTakeOffSpeed: 10
+  animator: {fileID: 1964378347}
 --- !u!95 &1964378347
 Animator:
   serializedVersion: 3

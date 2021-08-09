@@ -93,6 +93,7 @@ public class PhysicsObject : MonoBehaviour
                 if (projection < 0)
                 {
                     velocity = velocity - projection * currentNormal;
+                        
                 }
 
                 float modifiedDistance = hitBufferList[i].distance - shellRadius;
