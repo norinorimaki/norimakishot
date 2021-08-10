@@ -41,7 +41,8 @@ public class PlayerController : PhysicsObject
         }
 
         targetVelocity = move * maxSpeed;
-
+        
+        //AnimatorのtagにSpeedっていうやつを作ったことで、アニメーションの切り替わりを制御している
         animator.SetFloat("Speed", Mathf.Abs(move.x));
 
     }
