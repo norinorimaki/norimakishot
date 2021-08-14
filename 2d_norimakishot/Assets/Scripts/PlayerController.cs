@@ -8,13 +8,27 @@ public class PlayerController : PhysicsObject
     public float jumpTakeOffSpeed = 7;
     public Animator animator;
 
-    private SpriteRenderer spriteRenderer;
+[Header("For Wall Sliding")]
+    [SerializeField] float wallSlideSpeed = 0f;
+    [SerializeField] LayerMask wallLayer;
+    [SerializeField] Transform wallCheckPoint;
+    [SerializeField] Vector2 wallCheckSize;
+    private bool isTouchingWall;
+    private bool isWallSliding;
 
     void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+    
     }
 
+    protected void CheckWorld(){
+     isTouchingWall = Physics2D.OverlapBox(wallCheckPoint.position, wallCheckSize, 0, wallLayer);
+    }
+
+    private void OnDrawGizmosSelected(){
+        Gizmos.color = Color.blue;
+        Gizmos.DrawCube(wallCheckPoint.position, wallCheckSize);
+    }
     protected override void ComputeVelocity()
     {
         Vector2 move = Vector2.zero;
@@ -34,15 +48,17 @@ public class PlayerController : PhysicsObject
             }
         }
 
-        bool flipSprite = spriteRenderer.flipX ? (move.x > 0.00f) : (move.x < 0.00f);
-        if (flipSprite)
-        {
-            spriteRenderer.flipX = !spriteRenderer.flipX;   
+        if (move.x > 0.00f){
+        transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
 
-        targetVelocity = move * maxSpeed;
+        else if (move.x < 0.00f){
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
         
-        //AnimatorのtagにSpeedっていうやつを作ったことで、アニメーションの切り替わりを制御している
+
+        targetVelocity = move * maxSpeed;
+
         animator.SetFloat("Speed", Mathf.Abs(move.x));
 
     }
