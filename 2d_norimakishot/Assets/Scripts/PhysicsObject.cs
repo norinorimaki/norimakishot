@@ -7,7 +7,7 @@ public class PhysicsObject : MonoBehaviour
     public float gravityModifier = 1f;
     public float minGroundNormalY = .65f;
 
-    protected bool grounded;
+    public bool grounded;
     protected Vector2 groundNormal;
 
     protected Vector2 targetVelocity;
@@ -93,7 +93,7 @@ public class PhysicsObject : MonoBehaviour
                 if (projection < 0)
                 {
                     velocity = velocity - projection * currentNormal;
-                        
+                    
                 }
 
                 float modifiedDistance = hitBufferList[i].distance - shellRadius;

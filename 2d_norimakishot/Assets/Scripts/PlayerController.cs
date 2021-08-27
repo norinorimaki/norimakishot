@@ -6,29 +6,11 @@ public class PlayerController : PhysicsObject
 {
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
+    [SerializeField]public float wallKickStrength = 4;
     public Animator animator;
-
-[Header("For Wall Sliding")]
-    [SerializeField] float wallSlideSpeed = 0f;
-    [SerializeField] LayerMask wallLayer;
-    [SerializeField] Transform wallCheckPoint;
-    [SerializeField] Vector2 wallCheckSize;
-    private bool isTouchingWall;
-    private bool isWallSliding;
-
-    void Awake()
-    {
-    
-    }
-
-    protected void CheckWorld(){
-     isTouchingWall = Physics2D.OverlapBox(wallCheckPoint.position, wallCheckSize, 0, wallLayer);
-    }
-
-    private void OnDrawGizmosSelected(){
-        Gizmos.color = Color.blue;
-        Gizmos.DrawCube(wallCheckPoint.position, wallCheckSize);
-    }
+    [SerializeField]private int maxDoubleJumpTimes = 3;
+    private int doubleJumpTimes = 0;
+    [SerializeField]private bool isTouchingWall;
     protected override void ComputeVelocity()
     {
         Vector2 move = Vector2.zero;
@@ -50,12 +32,27 @@ public class PlayerController : PhysicsObject
 
         if (move.x > 0.00f){
         transform.localRotation = Quaternion.Euler(0, 0, 0);
+        if(wallKickStrength>0){
+            wallKickStrength = -1 * wallKickStrength;
+            }
         }
 
         else if (move.x < 0.00f){
             transform.localRotation = Quaternion.Euler(0, 180, 0);
+            wallKickStrength = Mathf.Abs(wallKickStrength);
         }
         
+        if(!grounded && Input.GetButtonDown("Jump") && doubleJumpTimes<maxDoubleJumpTimes){
+                velocity.y = jumpTakeOffSpeed;
+                doubleJumpTimes ++ ;
+        } 
+        if(grounded){
+            doubleJumpTimes = 0;
+        }
+        if(!grounded && move.x != 0 && isTouchingWall && Input.GetButtonDown("Jump")){
+            velocity.y = jumpTakeOffSpeed;
+            
+        }
 
         targetVelocity = move * maxSpeed;
 
