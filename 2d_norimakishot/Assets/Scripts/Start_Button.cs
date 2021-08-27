@@ -7,6 +7,7 @@ public class Start_Button : MonoBehaviour
 {
     public void OnClickStartButton()
     {
-        SceneManager.LoadScene("Level_Select");
+        //SceneManager.LoadScene("Level_Select");
+        FadeManager.Instance.LoadScene("Level_Select", 0.3f);
     }
 }
